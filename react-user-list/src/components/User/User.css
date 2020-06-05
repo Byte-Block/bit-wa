@@ -1,0 +1,17 @@
+.User {
+    max-width: 1300px;
+    list-style-type: none;
+    display: flex;
+    margin: auto;
+}
+
+.User__Thumbnail{
+    display: inline-block;
+    height: 48px;
+    border-radius: 25px;
+}
+
+.User__Data{
+    display: block;
+    text-align: left;
+}

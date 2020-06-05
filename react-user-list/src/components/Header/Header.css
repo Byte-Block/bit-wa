@@ -1,0 +1,12 @@
+.Header{
+    display: flex;
+    max-width: 1500px;
+    margin: auto;
+    background-color: salmon;
+    align-items: center;
+    justify-content: center;
+}
+
+.Header__Title{
+    color: seashell;
+}
