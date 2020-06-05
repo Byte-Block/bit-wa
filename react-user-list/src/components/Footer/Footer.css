@@ -1,0 +1,12 @@
+.Footer{
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1500px;
+    margin: auto;
+    background-color: salmon;
+}
+
+.Footer__Title{
+    color: seashell;
+    margin-left: 120px;
+}

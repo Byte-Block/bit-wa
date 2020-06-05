@@ -9,7 +9,7 @@ const UsersList = () => {
     const randomUsers = data.results;
 
     return (
-        <ul>
+        <ul className="UsersList">
             {randomUsers.map(user => (
                 <User key={user.login.uuid} thumb={user.picture.thumbnail}
                     name={user.name.first}

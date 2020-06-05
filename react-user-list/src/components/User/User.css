@@ -1,17 +1,26 @@
 .User {
-    max-width: 1300px;
+    width: 100%;
     list-style-type: none;
     display: flex;
     margin: auto;
+    border: 1px solid gray;
+    border-bottom: 0px;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+}
+
+.User:last-child{
+    border-bottom: 1px solid gray;
 }
 
 .User__Thumbnail{
     display: inline-block;
     height: 48px;
     border-radius: 25px;
+    margin: 8px;
 }
 
 .User__Data{
     display: block;
     text-align: left;
 }
+
