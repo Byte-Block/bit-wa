@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Manager Exercise</title>
+
+
+</head>
+
+<body>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+    <script type="text/javascript" src="./node_modules/figlet/lib/figlet.js"></script>
+    <script>
+
+        figlet("inputText", 'Standard', function (err, text) {
+            if (err) {
+                console.log('something went wrong...');
+                console.dir(err);
+                return;
+            }
+            console.log(text);
+        });
+
+    </script>
+</body>
+
+</html>
