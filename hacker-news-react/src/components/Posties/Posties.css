@@ -1,0 +1,23 @@
+.Posties{
+    margin: 0px auto 16px 32px;
+    padding-top: 16px;
+}
+.Posties__Title{
+    display: block;
+    padding-bottom: 8px;
+    color: #ea5421;
+}
+
+.Posties__Author{
+    padding-top: 8px;
+    color: #ea5421;
+    display: flex;
+    align-items: center;
+}
+
+.Posties__Divider {
+    max-width: 1425px;
+    box-shadow: inset 0 0 5px #ccc;
+    border: inset;
+    border-radius: 25px;
+}

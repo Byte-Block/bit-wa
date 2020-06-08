@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fetchIDsTopStories } from '../fetchIDsTopStories/fetchIDsTopStories';
-import { fetchStoryByID } from '../fetchStroyByID/fetchStoryByID';
+import { fetchStoryByID } from '../fetchStoryByID/fetchStoryByID';
 
 
 class TopStories extends React.Component {
@@ -28,9 +28,11 @@ class TopStories extends React.Component {
 
     render() {
         return (
-            <div>
-
-            </div>
+            <ul>
+                {this.state.data.map((id, i) =>
+                    <li key={i}>id</li>
+                )}
+            </ul>
         );
     }
 }

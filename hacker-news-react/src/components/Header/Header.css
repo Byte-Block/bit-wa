@@ -1,7 +1,9 @@
 .Header {
+    max-width: 1500px;
     display: flex;
     background-color: orangered;
     align-items: flex-start;
+    margin: auto;
 }
 
 .Header__Title {
