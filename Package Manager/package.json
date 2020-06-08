@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cowsay2": "^2.0.4",
     "figlet": "^1.4.0"
   }
 }
