@@ -1,0 +1,10 @@
+.Header {
+    display: flex;
+    background-color: orangered;
+    align-items: flex-start;
+}
+
+.Header__Title {
+    margin-left: 18.72px;
+    color: white;
+}
