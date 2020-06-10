@@ -1,6 +1,7 @@
-.UserGrid {
+.Grid {
     display: flex;
     flex-wrap: wrap;
     max-width: 1300px;
     margin: auto;
+    margin-top: 41.2px;
 }

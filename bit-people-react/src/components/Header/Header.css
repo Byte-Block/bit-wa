@@ -4,13 +4,14 @@
     margin: auto;
     background-color: salmon;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .Header__Title {
     color: seashell;
+    margin: auto;
 }
 
 .FaThList {
-    float: right !important;
+    
 }

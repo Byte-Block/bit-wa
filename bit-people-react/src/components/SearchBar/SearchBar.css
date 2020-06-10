@@ -1,0 +1,20 @@
+.SearchBar {
+    display: flex;
+    max-width: 1170px;
+    margin: 30px auto 30px auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.SearchBar__FaSearch {
+    height: 20px;
+    width: 20px;
+    padding-left: 20px;
+}
+
+.SearchBar__Input {
+    display: block;
+    width: 95%;
+    border: none;
+    border-bottom: solid 2px #000000;
+}

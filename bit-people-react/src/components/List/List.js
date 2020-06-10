@@ -1,14 +1,15 @@
 import React from 'react';
-import './UsersList.css';
+import './List.css';
 
-import { User } from '../User/User';
+import { ListUser } from '../ListUser/ListUser';
 
-const UsersList = (props) => {
+const List = (props) => {
 
     return (
-        <ul className="UsersList">
+        <ul className="List">
             {props.users.map(user => (
-                <User key={user.login.uuid} thumb={user.picture.thumbnail}
+                <ListUser key={user.login.uuid} gender={user.gender}
+                    thumb={user.picture.thumbnail}
                     name={user.name.first}
                     last={user.name.last}
                     email={user.email}
@@ -20,4 +21,4 @@ const UsersList = (props) => {
 
 }
 
-export { UsersList };
+export { List };

@@ -1,16 +1,17 @@
 import React from 'react';
-import './UserGrid.css';
+import './Grid.css';
 
-import { UserCard } from '../UserCard/UserCard';
+import { GridUser } from '../GridUser/GridUser';
 
 
-const UserGrid = (props) => {
+const Grid = (props) => {
 
     return (
-        <div className="UserGrid">
+        <div className="Grid">
             {props.users.map(user => (
-                <UserCard key={user.login.uuid} picture={user.picture.large}
+                <GridUser key={user.login.uuid} picture={user.picture.large}
                     name={user.name.first}
+                    gender={user.gender}
                     email={user.email}
                     dob={user.dob.date}
                 />
@@ -21,4 +22,4 @@ const UserGrid = (props) => {
 }
 
 
-export { UserGrid };
+export { Grid };

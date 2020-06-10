@@ -1,4 +1,4 @@
-.User {
+.ListUser {
     width: 100%;
     list-style-type: none;
     display: flex;
@@ -8,28 +8,32 @@
     font-family: 'Tenali Ramakrishna', sans-serif;
 }
 
-.User:last-child {
+.ListUser--female {
+    background-color: #ffebee;
+}
+
+.ListUser:last-child {
     border-bottom: 1px solid gray;
 }
 
-.User__Thumbnail {
+.ListUser__Thumbnail {
     display: inline-block;
     height: 48px;
     border-radius: 25px;
     margin: 8px;
 }
 
-.User__Data {
+.ListUser__Data {
     display: block;
     text-align: left;
 }
 
-.User__Email {
+.ListUser__Email {
     display: flex;
     align-items: center;
 }
 
-.User__Birthday {
+.ListUser__Birthday {
     display: flex;
     align-items: center;
 }

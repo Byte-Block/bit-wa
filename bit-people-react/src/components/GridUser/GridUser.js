@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './UserCard.css';
+import './GridUser.css';
 
-const UserCard = (props) => {
+const GridUser = (props) => {
 
     const hideEmail = (email) => {
         let splitEmail = email.split('');
@@ -31,12 +31,12 @@ const UserCard = (props) => {
     }
 
     return (
-        <div className="UserCard">
-            <div className="UserCard__Top">
-                <img className="UserCard__Image" src={props.picture} alt="picture" />
-                <span className="UserCard__Name">{props.name}</span>
+        <div className="GridUser">
+            <div className="GridUser__Top">
+                <img className="GridUser__Image" src={props.picture} alt="not available" />
+                <span className="GridUser__Name">{props.name}</span>
             </div>
-            <div className="UserCard__Data">
+            <div className={props.gender === 'female' ? "GridUser__Data GridUser__Data--female" : "GridUser__Data"}>
                 <p>Email: {hideEmail(props.email)}</p>
                 <p>Date of birth: {dobFormat(props.dob)}</p>
             </div>
@@ -44,14 +44,14 @@ const UserCard = (props) => {
     );
 }
 
-UserCard.propTypes = {
+GridUser.propTypes = {
     picture: PropTypes.string,
     name: PropTypes.string,
     email: PropTypes.string,
     dob: PropTypes.string
 }
 
-UserCard.defaultProps = {
+GridUser.defaultProps = {
     picture: "https://previews.123rf.com/images/panyamail/panyamail1809/panyamail180900343/109879063-user-avatar-icon-sign-profile-symbol.jpg",
     name: "John Doe",
     email: "/.-.com@/.-.com.com",
@@ -60,4 +60,4 @@ UserCard.defaultProps = {
 
 
 
-export { UserCard }; 
+export { GridUser }; 
