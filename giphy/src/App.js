@@ -13,11 +13,25 @@ class App extends React.Component {
     }
 
     this.setSearchResults = this.setSearchResults.bind(this);
+    this.removeGivenGif = this.removeGivenGif.bind(this);
+    this.removeAllGifs = this.removeAllGifs.bind(this);
   }
 
-  setSearchResults(searchResults) {
+  setSearchResults(searchResult) {
+    this.setState({ searchResult });
+  }
+
+  removeGivenGif(id) {
+    const newState = this.state.searchResult.filter(gif => gif.id !== id);
+
     this.setState({
-      searchResult: searchResults
+      searchResult: newState
+    });
+  }
+
+  removeAllGifs() {
+    this.setState({
+      searchResult: []
     });
   }
 
@@ -25,8 +39,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <SearchBar setResults={this.setSearchResults} />
-        <GalleryOfGifs gifs={this.state.searchResult} />
+        <SearchBar setResults={this.setSearchResults} removal={this.removeAllGifs}/>
+        <GalleryOfGifs gifs={this.state.searchResult} onDelete={this.removeGivenGif} />
       </div>
     );
   }

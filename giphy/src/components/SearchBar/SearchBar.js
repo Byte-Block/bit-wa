@@ -3,7 +3,7 @@ import './SearchBar.css';
 
 import { fetchGifs } from '../fetchGifs/fetchGifs';
 
-const SearchBar = ({ setResults }) => {
+const SearchBar = ({ setResults, removal }) => {
 
     const onSearch = (event) => {
         if (event.keyCode === 13) {
@@ -18,6 +18,7 @@ const SearchBar = ({ setResults }) => {
     return (
         <div className="SearchBar">
             <input className="SearchBar__Input" type="search" onKeyUp={onSearch}></input>
+            <button onClick={removal}>Remove All</button>
         </div>
     );
 

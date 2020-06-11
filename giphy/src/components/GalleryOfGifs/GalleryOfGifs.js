@@ -1,10 +1,19 @@
 import React from 'react';
 import './GalleryOfGifs.css';
 
-const GalleryOfGifs = ({ gifs }) => {
+import { Gif } from '../Gif/Gif';
+
+const GalleryOfGifs = ({ gifs, onDelete }) => {
     return (
         <div className="GalleryOfGifs">
-            {gifs.map((gif, i) => <img className="GalleryOfGifs__img" key={i} src={gif.images.downsized.url} alt="GIPHY" />)}
+            {gifs.map((gif, i) =>
+                <Gif
+                    key={i}
+                    id={gif.id}
+                    gifURL={gif.images.downsized.url}
+                    onDelete={onDelete}
+                />
+            )}
         </div>
     );
 }

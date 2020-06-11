@@ -1,0 +1,24 @@
+.Gif__Container {
+    position: relative;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    margin: 30px auto 30px auto;
+    justify-content: center;
+}
+
+.Gif__Gif {
+    object-position: center;
+    object-fit: contain;
+}
+
+.Gif__Delete {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.Gif__Container:hover .Gif__Delete {
+    display: block;
+}
