@@ -13,7 +13,7 @@ const SearchBar = ({ setResults }) => {
                 });
         }
 
-    }cd ..\
+    }
 
     return (
         <div className="SearchBar">
