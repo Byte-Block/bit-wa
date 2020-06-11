@@ -3,19 +3,35 @@ import './Users.css';
 
 import { List } from '../List/List';
 import { Grid } from '../Grid/Grid';
+import { Loader } from '../Loader/Loader';
 
-const Users = (props) => {
+const Users = ({ listOrGridView, filteredUsers, users }) => {
 
+    // return (
+    //     <>
+    //         {
+    //             listOrGridView ?
+    //                 filteredUsers.length ?
+    //                     <List users={filteredUsers} />
+    //                     : <List users={users} />
+    //                 : filteredUsers.length ?
+    //                     <Grid users={filteredUsers} />
+    //                     : <Grid users={users} />
+    //         }
+    //     </>
+    // );
     return (
         <>
-            {
-                props.listOrGridView ?
-                    props.searchFieldValue === '' ?
-                        <List users={props.users} />
-                        : <List users={props.filteredUsers} />
-                    : props.searchFieldValue === '' ?
-                        <Grid users={props.users} />
-                        : <Grid users={props.filteredUsers} />
+            {filteredUsers.length ?
+                listOrGridView ?
+                    filteredUsers.length ?
+                        <List users={filteredUsers} />
+                        : <List users={users} />
+                    : filteredUsers.length ?
+                        <Grid users={filteredUsers} />
+                        : <Grid users={users} />
+                : users.length ?
+                    "NOTHING FOUND" : <Loader />
             }
         </>
     );
