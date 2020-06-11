@@ -1,0 +1,15 @@
+.GalleryOfGifs {
+  max-width: 1300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.GalleryOfGifs__img {
+  display: block;
+  width: 30%;
+  margin: auto;
+  align-items: center;
+}
