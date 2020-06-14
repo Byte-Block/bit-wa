@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+import { Container } from 'react-materialize';
 import { SearchBar } from './components/SearchBar/SearchBar';
-import { Main } from './components/Main/Main';
+import { MainComponent } from './components/MainComponent/MainComponent';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchResults: []
+      searchResults: [],
+      playingVideoURL: ''
     }
 
   }
@@ -19,15 +21,28 @@ class App extends Component {
   setSearchResults = (searchResults) => {
     this.setState({
       searchResults
+    }, () => console.log(this.state.searchResults)
+    );
+  }
+
+  getVideoId = (videoId) => {
+    console.log(videoId);
+    this.setState({
+      playingVideoURL: `https://www.youtube.com/embed/${videoId}`
     });
   }
 
   render() {
-    console.log(this.state.searchResults);
     return (
       <div className="App">
-        <SearchBar setSearchResults={this.setSearchResults} />
-        <Main searchResults={this.state.searchResults} />
+        <Container>
+          <SearchBar setSearchResults={this.setSearchResults} />
+          <MainComponent
+            searchResults={this.state.searchResults}
+            onGet={this.getVideoId}
+            videoURL={this.state.playingVideoURL}
+          />
+        </Container>
       </div>
     );
   }

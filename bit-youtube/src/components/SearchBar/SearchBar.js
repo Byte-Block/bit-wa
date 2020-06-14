@@ -1,22 +1,41 @@
 import React from 'react';
 import './SearchBar.css';
 
-import { Navbar, Icon } from 'react-materialize';
-import { fetchYoutubeVideo } from '../fetchYoutubeVideo/fetchYoutubeVideo';
+//import { Navbar, Icon } from 'react-materialize';
+import { fetchYoutubeVideos } from '../fetch/fetch';
 
 const SearchBar = ({ setSearchResults }) => {
 
     const onSearch = (event) => {
 
-        fetchYoutubeVideo(event.target.value)
-            .then(data => {
-                setSearchResults(data.items);
-                console.log(data.items);
-            });
+        fetchYoutubeVideos(event.target.value)
+            .then(data =>
+                setSearchResults(data.items)
+            );
 
     }
 
-    return (<Navbar
+    return (
+        <nav className="SearchBar">
+            <div className="nav-wrapper">
+                <form>
+                    <div className="input-field">
+                        <input id="search" type="search" required placeholder="Search video here ..." onChange={onSearch} />
+                        <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
+                        <i className="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav >
+    );
+
+};
+
+export { SearchBar };
+
+/*
+    <Navbar
+        className="SearchBar"
         alignLinks="right"
         id="mobile-nav"
         menuIcon={<Icon>menu</Icon>}
@@ -34,13 +53,8 @@ const SearchBar = ({ setSearchResults }) => {
         search
         onChange={onSearch}
     >
-    </Navbar>);
-
-};
-
-export { SearchBar };
-
-
+    </Navbar>
+*/
 
 
 
