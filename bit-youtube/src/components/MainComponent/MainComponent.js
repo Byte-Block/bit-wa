@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 
+import { fetchRelatedVideos } from '../fetch/fetch';
 import { Row, Col } from 'react-materialize';
 import { VideoPlaying } from '../VideoPlaying/VideoPlaying';
 import { ResultsPage } from '../ResultsPage/ResultsPage';
 
+class MainComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            playingVideoURL: '',
+            playingVideoTitle: '',
+            relatedVideos: []
+        }
 
-const MainComponent = ({ searchResults, onGet, videoURL }) => {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         searchResults: this.props.searchResults
-    //     }
-    // }
+    }
 
+    getVideoId = (videoId, playingVideoTitle) => {
+        console.log(videoId);
+        this.setState({
+            playingVideoURL: `https://www.youtube.com/embed/${videoId}`,
+            playingVideoTitle: playingVideoTitle
+        });
+        fetchRelatedVideos(videoId)
+            .then(data => this.setState({
+                relatedVideos: data.items
+            }, () => console.log("THIS RELATED VIDEOS :", data.items))
+            );
+    }
     // componentDidMount() {
     //     this.setState({
     //         searchResults: this.props.searchResults
@@ -36,18 +51,26 @@ const MainComponent = ({ searchResults, onGet, videoURL }) => {
     //     });
     // }
 
-    //render() {
-    return (
-        <Row>
-            <Col s={9}>
-                <VideoPlaying videoURL={videoURL}/>
-            </Col>
-            <Col s={3}>
-                <ResultsPage searchResults={searchResults} onGet={onGet} />
-            </Col>
-        </Row>
-    );
-    //}
+    render() {
+        return (
+            <Row>
+                <Col s={9}>
+                    <VideoPlaying
+                        videoURL={this.state.playingVideoURL}
+                        iframeTitle={this.state.playingVideoTitle}
+                    />
+                </Col>
+                <Col s={3}>
+                    <ResultsPage
+                        searchResults={this.props.searchResults}
+                        onGet={this.getVideoId}
+                        iframeTitle={this.props.searchResults}
+                        relatedVideos={this.state.relatedVideos}
+                    />
+                </Col>
+            </Row>
+        );
+    }
 }
 
 export { MainComponent };

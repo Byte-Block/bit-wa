@@ -12,8 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchResults: [],
-      playingVideoURL: ''
+      searchResults: []
     }
 
   }
@@ -25,13 +24,6 @@ class App extends Component {
     );
   }
 
-  getVideoId = (videoId) => {
-    console.log(videoId);
-    this.setState({
-      playingVideoURL: `https://www.youtube.com/embed/${videoId}`
-    });
-  }
-
   render() {
     return (
       <div className="App">
@@ -39,8 +31,6 @@ class App extends Component {
           <SearchBar setSearchResults={this.setSearchResults} />
           <MainComponent
             searchResults={this.state.searchResults}
-            onGet={this.getVideoId}
-            videoURL={this.state.playingVideoURL}
           />
         </Container>
       </div>
