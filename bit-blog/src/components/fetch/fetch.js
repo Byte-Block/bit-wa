@@ -1,5 +1,16 @@
 export const fetchPosts = () => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    return fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
-        .then(json => console.log(json))
+}
+
+export const fetchPostById = (id) => {
+    return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .then(response => response.json())
+}
+
+export const fetchAuthors = () => {
+    return (
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+    )
 }

@@ -1,20 +1,21 @@
-import React from 'react';
-import './Home.css';
+import React from "react";
+import "./Home.css";
 
-import { Row, Col } from 'react-bootstrap';
-import { Posts } from '../Posts/Posts';
+import { Row, Col } from "react-bootstrap";
+import { Posts } from "../Posts/Posts";
 
 const Home = () => {
-    return (
-        <>
-            <Row>
-                <Col xs={12}>
-                    <h1 className="Home__Title my-1">Posts</h1>
-                    <Posts />
-                </Col>
-            </Row>
-        </>
-    );
-}
+  return (
+    <>
+      <Row>
+        <Col xs={{ span: 10, offset: 1 }}>
+          <Posts />
+        </Col>
+      </Row>
+    </>
+  );
+};
 
 export { Home };
+
+// { span: 10, offset: 1 }
